@@ -48,3 +48,29 @@ const newPassport = function (person) {
 };
 newPassport(qandeel); //It will give a new qandeel object who passport number will be different
 checkIn(flight, qandeel); // so that passport number will than go into the checkin function and will show that the passport is not equal to the original one
+
+//Function Accepting Callback function
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  //it with convert the string(orange) like this o,r,a,n,g,e
+  const [firstLetter, ...othersLetters] = str.split(' ');
+  console.log(firstLetter.toUpperCase(), ...othersLetters);
+  return [firstLetter.toUpperCase(), ...othersLetters].join(' ');
+};
+console.log(upperFirstWord);
+
+//High order function
+const transformer = function (str, fn) {
+  console.log(`${fn(str)}`);
+  console.log(`${str}`);
+};
+transformer('JavaScript is the best', upperFirstWord);
+transformer('JavaScript is the best', oneWord);
+
+const high5 = function () {
+  console.log('👋🏼');
+};
+document.body.addEventListener('click', high5);
