@@ -106,3 +106,17 @@ newGreeter('Qandeel');
 //You can also write the above arrow function like this too, KEEP IT DRY
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 greetArr('Hello')('Qandeel');
+
+//The call and apply Methods
+const pearsonAirport = {
+  airline: 'Air Canada',
+  airlineCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.airlineCode}${flightNum}`
+    );
+  },
+};
+pearsonAirport.book(123456789, 'Qandeel');
+console.log(pearsonAirport.book(123456789, 'Qandeel'));
