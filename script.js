@@ -102,3 +102,7 @@ const newGreet = newGreeting => {
 };
 const newGreeter = newGreet('Salam');
 newGreeter('Qandeel');
+
+//You can also write the above arrow function like this too, KEEP IT DRY
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hello')('Qandeel');
