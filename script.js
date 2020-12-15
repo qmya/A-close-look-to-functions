@@ -74,3 +74,7 @@ const high5 = function () {
   console.log('👋🏼');
 };
 document.body.addEventListener('click', high5);
+
+//For Each
+//three elements in an array it will give three 👋🏼 when we click
+['Jonas', 'Martha', 'Adam'].forEach(high5);
