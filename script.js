@@ -91,3 +91,14 @@ greeter('Qandeel');
 greeter('Purdal ❤️');
 //We can also do like this
 greet('Hello')('Ami ❤️');
+
+//The above greet function make an arrow function
+
+const newGreet = newGreeting => {
+  // return console.log(`${newGreeting}`);
+  return newName => {
+    console.log(`${newGreeting}, ${newName}`);
+  };
+};
+const newGreeter = newGreet('Salam');
+newGreeter('Qandeel');
