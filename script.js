@@ -78,3 +78,14 @@ document.body.addEventListener('click', high5);
 //For Each
 //three elements in an array it will give three 👋🏼 when we click
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+
+//Functions returning other functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeter = greet('Hey');
+greeter('Qandeel');
+greeter('Purdal');
