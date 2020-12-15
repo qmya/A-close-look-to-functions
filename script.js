@@ -88,4 +88,6 @@ const greet = function (greeting) {
 };
 const greeter = greet('Hey');
 greeter('Qandeel');
-greeter('Purdal');
+greeter('Purdal ❤️');
+//We can also do like this
+greet('Hello')('Ami ❤️');
