@@ -136,8 +136,19 @@ const book = airCanada.book;
 //but now if we wanna call the same functionin Flair object
 // book(23, 'ggdsj'); //This cannot work because of this
 
-//so we use
+//so we use .call when the function is inside some other but you wanna use it for the other object the same way
 
+//CALL METHOD:
 book.call(flairAirLine, 2345, 'Qandeel');
 console.log(flairAirLine);
 book.call(airCanada, 4567, 'Purdal');
+
+const swiss = {
+  airline: 'Swiss Airlines',
+  airlineCode: 'SW',
+  bookings: [],
+};
+
+book.call(swiss, 2864, 'Purdal');
+book.call(swiss, 5678, 'Qandeel');
+console.log(swiss);
