@@ -217,3 +217,16 @@ console.log(addTax(0.1, 200));
 const taxInCanada = addTax.bind(null, 0.35);
 taxInCanada(8000);
 console.log(taxInCanada(8000));
+
+//Challenge
+
+// const newAddTax = rate => value => value + value * rate; Also write like this 👇🏽
+const newAddTax = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const newTaxInCanada = newAddTax(0.35);
+console.log(newTaxInCanada(5000));
+newAddTax(0.35)(8000);
+console.log(newAddTax(0.35)(8000));
