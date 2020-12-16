@@ -206,6 +206,14 @@ document
 //partial application
 //preset perimeters
 
+//general function of adding tax
 const addTax = (rate, value) => value + value * rate;
 addTax(10, 200);
 console.log(addTax(0.1, 200));
+
+//tax in canada
+//first argument of bind is "This" keyword
+//here we dont care because we dont have a this, so we will write "null"
+const taxInCanada = addTax.bind(null, 0.35);
+taxInCanada(8000);
+console.log(taxInCanada(8000));
