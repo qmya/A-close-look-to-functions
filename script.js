@@ -330,3 +330,46 @@ const booker = secureBooking();
 booker();
 booker();
 booker();
+
+//Closure example
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+g();
+f();
+console.dir(f);
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+console.dir(f);
+g();
+f();
+h();
+f();
+
+//Example 2
+const boardPassengers = function (noOfPassengers, waitTime) {
+  const perGroup = noOfPassengers / 3;
+  //Lets use a time to know the wait time
+  //This setTimeOut will be executed after a certain number of time that we have written
+  //here it is executed after 1000 milliseconds
+  setTimeout(function () {
+    console.log(`We are now boarding ${noOfPassengers} passengers`);
+    console.log(`There are 3 groups, and each group have ${perGroup}`);
+  }, waitTime * 1000); //SetTimeOut have two perimeter one is funtion other is time
+  console.log(`Will starts boarding in ${waitTime} seconds`);
+};
+boardPassengers(180, 3);
+
+//SEt time out usage
+//Looks like a call back
+setTimeout(function () {
+  console.log('When the timer is finish you can see this console comment');
+}, 1000);
