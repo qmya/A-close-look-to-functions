@@ -202,3 +202,10 @@ airCanada.buyPlane();
 document
   .querySelector('.buy')
   .addEventListener('click', airCanada.buyPlane.bind(airCanada)); //Aircanada is increasing when you click on button
+
+//partial application
+//preset perimeters
+
+const addTax = (rate, value) => value + value * rate;
+addTax(10, 200);
+console.log(addTax(0.1, 200));
