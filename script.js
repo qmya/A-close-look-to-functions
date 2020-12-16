@@ -171,3 +171,34 @@ console.log(swiss);
 const bookAC = book.bind(airCanada); //bind always gives us a function
 bookAC(23, 'Steven William'); //Same like passing a perimeter to a function
 console.log(airCanada.bookings);
+
+const bookFL = book.bind(flairAirLine);
+bookFL(45, 'Kate fooster');
+console.log(flairAirLine.bookings);
+
+const bookSW = book.bind(swiss);
+bookSW(56, 'Anne');
+console.log(swiss.bookings);
+
+//You call also do this
+//preset the flight number
+//set some argument
+const bookSW23 = book.bind(swiss, 23);
+bookSW23('Ian');
+bookSW23('Frankie');
+console.log(swiss.bookings);
+
+//Add event listeners
+
+airCanada.planes = 300; //initally its 300
+airCanada.buyPlane = function () {
+  console.log('button is working');
+  //this always points to the element that the event handler is attached too
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+airCanada.buyPlane();
+document
+  .querySelector('.buy')
+  .addEventListener('click', airCanada.buyPlane.bind(airCanada)); //Aircanada is increasing when you click on button
