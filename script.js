@@ -139,6 +139,7 @@ const book = airCanada.book;
 //so we use .call when the function is inside some other but you wanna use it for the other object the same way
 
 //CALL METHOD:
+//manually set the this keyword for any function
 book.call(flairAirLine, 2345, 'Qandeel');
 console.log(flairAirLine);
 book.call(airCanada, 4567, 'Purdal');
@@ -165,3 +166,8 @@ console.log(swiss);
 //We no more use apply method we use call in modren javascript
 book.call(swiss, ...flightData);
 console.log(swiss);
+
+//Bind method:
+const bookAC = book.bind(airCanada); //bind always gives us a function
+bookAC(23, 'Steven William'); //Same like passing a perimeter to a function
+console.log(airCanada.bookings);
