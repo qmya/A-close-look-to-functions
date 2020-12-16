@@ -152,3 +152,16 @@ const swiss = {
 book.call(swiss, 2864, 'Purdal');
 book.call(swiss, 5678, 'Qandeel');
 console.log(swiss);
+
+//APPLY METHOD:
+//You dont need to pass an argument directly
+//You have to make an array and then pass it through
+
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+//This apply method is no more use
+//We no more use apply method we use call in modren javascript
+book.call(swiss, ...flightData);
+console.log(swiss);
