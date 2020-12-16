@@ -108,15 +108,36 @@ const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 greetArr('Hello')('Qandeel');
 
 //The call and apply Methods
-const pearsonAirport = {
+const airCanada = {
   airline: 'Air Canada',
-  airlineCode: 'LH',
+  airlineCode: 'AC',
   bookings: [],
   book(flightNum, name) {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.airlineCode}${flightNum}`
     );
+    this.bookings.push({
+      flight: `${this.airlineCode}${flightNum}`,
+      name,
+    });
   },
 };
-pearsonAirport.book(123456789, 'Qandeel');
-console.log(pearsonAirport.book(123456789, 'Qandeel'));
+airCanada.book(123456789, 'Qandeel');
+airCanada.book(1234567810, 'Purdal');
+console.log(airCanada.bookings);
+//Lets after few years Air Canada created a new air line
+const flairAirLine = {
+  airline: 'Flair',
+  airlineCode: 'FL',
+  bookings: [],
+};
+
+const book = airCanada.book;
+//but now if we wanna call the same functionin Flair object
+// book(23, 'ggdsj'); //This cannot work because of this
+
+//so we use
+
+book.call(flairAirLine, 2345, 'Qandeel');
+console.log(flairAirLine);
+book.call(airCanada, 4567, 'Purdal');
