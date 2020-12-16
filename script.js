@@ -281,13 +281,15 @@ const poll = {
       answer < this.answers.length &&
       this.answers[answer]++;
   },
-  displayResults(type = 'array') {
-    if (type === 'array') {
-      console.log(this.answers);
-    } else if (type === 'string') {
-      console.log(`Polls results are ${this.answers.join(',')}`);
-    }
-  },
+
+  // displayResults(type = 'array') {
+  //   if (type === 'array') {
+  //     console.log(this.answers);
+  //   } else if (type === 'string') {
+  //     // Poll results are 13, 2, 4, 1
+  //     console.log(`Poll results are ${this.answers.join(', ')}`);
+  //   }
+  // },
 };
 poll.registerNewAnswer();
 console.log(poll.answers);
@@ -298,4 +300,20 @@ document
 
 //Bonus
 //[5,2,3]
-poll.displayResults.call({ answer: [5, 2, 3] }, 'string');
+// poll.displayResults.call({ answer: [5, 2, 3] }, 'string');
+
+//Immediately invoking function expressions
+//A function that is executed once
+//We use in other function called async/await
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+runOnce();
+//It can run as much time as we want ☝🏽
+//this will executed once 👇🏽
+(function () {
+  console.log('This will never run again');
+})();
+//for arrow function
+(() => console.log('This will ALSO never run again'))();
